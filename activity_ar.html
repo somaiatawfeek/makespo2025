@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- وصف الموقع -->
+  <meta name="description" content="موقع مكسبو 2025 - نقدم لك أحدث الأخبار والمعلومات التقنية والتحديثات المهمة لعام 2025." />
+  
+  <!-- الكلمات المفتاحية -->
+  <meta name="keywords" content="مكسبو, أخبار, تقنية, تحديثات, 2025, ابتكار, اختراع, اختراعات, فكرة, موقع عربي" />
+  
+  <!-- المؤلف -->
+  <meta name="author" content="MakeSpo Technical Team" />
+  
+  <!-- إعدادات تحسين العرض في محركات البحث -->
+  <meta name="robots" content="index, follow" />
+  
+  <!-- روابط الشبكات الاجتماعية - Open Graph -->
+  <meta property="og:title" content="مكسبو 2025" />
+  <meta property="og:description" content="موقع مكسبو 2025 - أحدث الأخبار التقنية والتحديثات." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.example.com/" />
+  <meta property="og:image" content="https://www.example.com/path-to-image.jpg" />
+  
+  <!-- تويتر كارد -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="مكسبو 2025" />
+  <meta name="twitter:description" content="موقع مكسبو 2025 - أحدث الأخبار التقنية والتحديثات." />
+  <meta name="twitter:image" content="https://www.example.com/path-to-image.jpg" />
+  
+  <!-- favicon -->
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" />
+  
+  <!-- الخطوط -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  
+  <!-- Bootstrap 5.3 RTL -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+  
+  <!-- إضافات CSS أخرى متعلقة بالمشروع -->
+  <link rel="stylesheet" href="assets/css/animate.css" />
+  <link rel="stylesheet" href="assets/css/style_ar.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
+  
+
+
+  
+  <style>
+     
+ 
+     /* تهيئة الخط والجسم */
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #fff;
+      color: #144d4d;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* شريط التنقل */
+    nav.navbar {
+      background: linear-gradient(90deg, #2aa8a8 60%, #218181 100%);
+      min-height: 80px;
+      padding: 0 1.6rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.09);
+      font-size: 1.08rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 1000;
+    }
+    
+    /* ترتيب العناصر: الشعار على اليسار */
+    .navbar-brand {
+      order: 1;
+      display: flex;
+      align-items: center;
+      min-width: 120px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .navbar-brand img {
+      height: 60px;
+      filter: drop-shadow(0 2px 7px #19727266) brightness(0) invert(1);
+      transition: transform 0.32s cubic-bezier(.3,2,.8,1.34);
+    }
+    .navbar-brand:hover img {
+      transform: scale(1.12) rotate(-3deg);
+      opacity: 0.93;
+    }
+    
+    /* قائمة العناصر الرئيسية - الوسط */
+    .navbar-nav {
+      order: 2;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+      margin: 0 13px 0 0;
+      padding: 0;
+      list-style: none;
+      transition: gap 0.25s;
+    }
+    .navbar-nav .nav-item {
+      letter-spacing: 0.01em;
+      min-width: 107px;
+      text-align: center;
+      position: relative;
+    }
+    .navbar-nav .nav-link {
+      color: #e0f7f7 !important;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 2;
+      padding: 0.6rem 1.1rem;
+      border-radius: 3.5px;
+      transition: background 0.2s, color 0.2s, box-shadow 0.25s;
+      display: inline-block;
+      position: relative;
+    }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link:focus,
+    .navbar-nav .active > .nav-link {
+      color: #fff !important;
+      background: #185d5d;
+      box-shadow: 0 2px 12px #297c7c2d;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .navbar-nav .nav-link::after {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 0;
+      border-radius: 2px;
+      height: 2px;
+      background: #fff;
+      transition: width 0.25s cubic-bezier(0.08,0.72,0.52,1.4);
+    }
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link:focus::after {
+      width: 46%;
+    }
+    /* القائمة المنسدلة */
+    .dropdown-menu-dark {
+      background: #217b7b;
+      color: #fff;
+      border-radius: 7px;
+      box-shadow: 0 6px 30px #19727277;
+      border: none;
+      min-width: 148px;
+      overflow: hidden;
+      margin-top: 10px !important;
+      padding: 0.35rem 0;
+      animation: dropdownOpen 0.17s cubic-bezier(0.11,2,0.29,0.98);
+    }
+    @keyframes dropdownOpen {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .dropdown-item {
+      color: #e0f7f7;
+      font-size: 16px;
+      border-radius: 0;
+      padding: 11px 1.2rem 9px 1.2rem;
+      transition: background 0.22s,color 0.2s;
+    }
+    .dropdown-item:hover, .dropdown-item:focus {
+      
+      color: #16504a !important;
+    }
+    .dropdown-toggle::after {
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    /* قسم اللغة وزر تسجيل الدخول على اليمين */
+    .navbar-lang-login {
+      order: 3;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      justify-content: flex-end;
+      min-width: 165px;
+    }
+    .nav-icon-globe {
+      font-size: 22px;
+      color: #e0f7f7;
+      cursor: pointer;
+      transition: color 0.18s;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      background: none;
+      padding: 6px;
+      border: none;
+    }
+    .nav-icon-globe:focus,
+    .nav-icon-globe:hover {
+      background: #1e6666;
+      color: #fff;
+    }
+    .login-btn {
+      border: 1px solid #e0f7f7;
+      border-radius: 4px;
+      padding: 7px 16px;
+      color: #e0f7f7 !important;
+      background: transparent;
+      font-weight: 500;
+      transition: all 0.22s;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+    }
+    .login-btn:hover,
+    .login-btn:focus {
+      background: #144d4d !important;
+      color: #fff !important;
+      border-color: #144d4d !important;
+      box-shadow: 0 3px 13px #1f807030;
+    }
+    .login-btn::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.06);
+      opacity: 0;
+      transition: 0.3s;
+    }
+    .login-btn:hover::after {
+      opacity: 1;
+    }
+
+    /* زر الهامبرغر */
+    .navbar-toggler {
+      border: none;
+      font-size: 25px;
+      background: transparent;
+      color: #fff;
+      order: 4;
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+    }
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    /* استجابة الشاشات */
+    @media (max-width: 991.98px) {
+      .navbar-nav,
+      .navbar-lang-login {
+        display: flex !important;
+      }
+      .navbar-toggler {
+        display: block;
+      }
+      .navbar-brand {
+        order: 1;
+      }
+      .offcanvas .login-btn {
+        width: 100%;
+        margin-top: 18px;
+      }
+    }
+    @media (min-width: 992px) {
+      .navbar-nav,
+      .navbar-lang-login {
+        display: flex !important;
+      }
+      .navbar-toggler {
+        display: none;
+      }
+      .navbar-brand {
+        order: 1;
+      }
+    }
+.coming-soon, 
+.coming-soon * {
+  color: white !important;
+}
+
+    /* offcanvas (القائمة الجانبية) */
+    .offcanvas .nav-link {
+      padding: 11px 4px;
+      font-size: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .offcanvas .nav-link:last-child {
+      border-bottom: none;
+    }
+    .offcanvas-body .login-btn {
+      width: 100%;
+      margin-top: 20px;
+      font-size: 18px;
+      display: block;
+      text-align: center;
+    }
+    .offcanvas-header {
+      border-bottom: 1px solid #195a5a;
+    }
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700&display=swap');
+
+  .festival-section {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+    font-family: 'Cairo', sans-serif;
+    color: #144d4d;
+    line-height: 1.6;
+  }
+
+  .festival-section h1 {
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-align: center;
+    color: #218181;
+    border-bottom: 3px solid #2aa8a8;
+    padding-bottom: 8px;
+  }
+
+  .festival-section p.intro {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    text-align: justify;
+    font-weight: 400;
+  }
+
+  .activity {
+    background: #e0f2f1cc;
+    border-radius: 12px;
+    padding: 20px 25px;
+    margin-bottom: 2rem;
+    box-shadow: 0 5px 18px rgba(33, 129, 129, 0.15);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s forwards;
+  }
+
+  .activity:nth-child(1) { animation-delay: 0.2s; }
+  .activity:nth-child(2) { animation-delay: 0.4s; }
+  .activity:nth-child(3) { animation-delay: 0.6s; }
+  .activity:nth-child(4) { animation-delay: 0.8s; }
+
+  .activity-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background-color: #2aa8a8;
+    color: white;
+    border-radius: 50%;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(33, 129, 129, 0.35);
+  }
+
+  .activity-content {
+    flex: 1;
+  }
+
+  .activity-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #16504a;
+    font-weight: 700;
+  }
+
+  .activity-content p {
+    font-size: 1.1rem;
+    color: #144d4d;
+    text-align: justify;
+  }
+
+  /* تأثير ظهور تدريجي */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* استجابة الشاشات الصغيرة */
+  @media (max-width: 767px) {
+    .activity {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .activity-icon {
+      margin-bottom: 12px;
+    }
+  }
+</style>
+
+
+
+  </style>
+
+
+      <title>  عن مكسبو </title>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top shadow" aria-label="الشريط الرئيسي">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <!-- الشعار على اليسار -->
+      <a class="navbar-brand" href="index_ar.html" aria-label="مكسبو 2025">
+        <img src="assets/img/logo.png" alt="مكسبو 2025" />
+      </a>
+
+      <!-- القائمة الأفقية (شاشات كبيرة) -->
+      <div class="collapse navbar-collapse d-none d-lg-flex" id="navbarNav" style="padding: 0;">
+        <ul class="navbar-nav align-items-center mb-0">
+          <li class="nav-item"><a class="nav-link active" href="main_ar.html">       الرئيسية       </a></li>
+          <li class="nav-item"><a class="nav-link active" href="about_ar.html">عن مكسبو</a></li>
+
+    <li class="nav-item"><a class="nav-link active" href="activity_ar.html">أنشطة   مكسبو</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="festivalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              فعاليات  مهرجان مكسبو
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="festivalDropdown">
+              <li><a class="dropdown-item" href="workshops_ar.html">ورش العمل التدريبية</a></li>
+              <li><a class="dropdown-item" href="exhibitions_ar.html">معارض الابتكارات</a></li>
+              <li><a class="dropdown-item" href="competitions_ar.html">المسابقات التحفيزية</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="news_ar.html">آخر الأخبار</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact_ar.html">تواصل بنا</a></li>
+        </ul>
+
+        <!-- اللغة وتسجيل الدخول على اليمين -->
+        <div class="navbar-lang-login d-none d-lg-flex">
+          <div class="dropdown">
+            <a class="nav-link nav-icon-globe dropdown-toggle" id="langDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="اختيار اللغة">
+              <i class="fa fa-globe"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="langDropdown">
+              <li><a class="dropdown-item" href="about_ar.html">العربية</a></li>
+              <li><a class="dropdown-item" href=" about.html">English</a></li>
+            </ul>
+          </div>
+          <a href="login_ar.html" class="login-btn">تسجيل الدخول</a>
+        </div>
+      </div>
+
+      <!-- زر الهامبرغر (شاشات صغيرة) -->
+      <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="فتح القائمة">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- offcanvas القائمة الجانبية (شاشات صغيرة) -->
+      <div class="offcanvas offcanvas-end text-bg-dark d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title m-0" id="offcanvasNavbarLabel">القائمة</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="إغلاق"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav mb-4">
+            <li class="nav-item"><a class="nav-link active" href="main_ar.html">       الرئيسية       </a></li>
+            <li class="nav-item"><a class="nav-link active" href="about_ar.html">عن مكسبو</a></li>
+    <li class="nav-item"><a class="nav-link active" href="activity_ar.html">أنشطة   مكسبو</a></li>
+
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="festivalDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false">
+                 فعاليات    مهرجان مكسبو
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="festivalDropdownMobile">
+                <li><a class="dropdown-item" href="workshops_ar.html">ورش العمل التدريبية</a></li>
+                <li><a class="dropdown-item" href="exhibitions_ar.html">معارض الابتكارات</a></li>
+                <li><a class="dropdown-item" href="competitions_ar.html">المسابقات التحفيزية</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="news_ar.html">آخر الأخبار</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact_ar.html">تواصل بنا</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link nav-icon-globe dropdown-toggle" href="#" id="langDropdownMobile" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fa fa-globe"></i> اللغة
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="langDropdownMobile">
+               <li><a class="dropdown-item" href="about_ar.html">العربية</a></li>
+              <li><a class="dropdown-item" href=" about.html">English</a></li>
+          
+            </li>
+          </ul>
+          <a href="login_ar.html" class="login-btn mt-2">تسجيل الدخول</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  
+  <!-- مسافة لتجنب سقوط المحتوى تحت الهيدر -->
+  <div style="margin-top:90px;"></div>
+  
+  <!-- --- بقیة المحتوى هنا --- -->
+  
+
+<section class="festival-section" aria-label="مهرجان مكسبو ٢٠٢٥ - دعم الابتكار في اليمن">
+
+
+  <h2 style="color:#218181; margin-bottom: 1.5rem; text-align: center;">أنشطة مهرجان "مكسبو ٢٠٢٥"</h2>
+
+  <p style="font-style: italic; font-size: 1.1rem; margin-bottom: 2.5rem; text-align: justify;">
+    الفكرة الرئيسية لمكسبو هي عبارة عن مهرجان يساهم في تنفيذ أنشطة لخلق بيئة محفزة تساهم في تطوير المبدعين والمبتكرين وتعزز من دورهم في تغيير الواقع الاقتصادي والاجتماعي في اليمن، حيث نسعى بشكل أولي للعمل على الأنشطة التالية:
+  </p>
+
+  <!-- النشاط 1 -->
+  <div class="activity" tabindex="0" aria-label="عروض حية للابتكارات">
+    <div class="activity-icon" aria-hidden="true">💡</div>
+    <div class="activity-content">
+      <h3>١. عروض حية للابتكارات</h3>
+      <p>
+        تتيح هذه الفعالية للمشاركين عرض أحدث الابتكارات التي تم تطويرها من قبل المخترعين والمبدعين في مختلف المجالات. يتم تقديم هذه العروض بشكل حي أمام الحضور من الجمهور والمستثمرين، مما يساهم في إبراز الابتكارات الجديدة، تشجيع المبدعين على تطوير أفكارهم، وجذب الانتباه للمشاريع الواعدة التي قد تسهم في تحقيق تغييرات إيجابية في المجتمع.
+      </p>
+    </div>
+  </div>
+
+  <!-- النشاط 2 -->
+  <div class="activity" tabindex="0" aria-label="حلقات نقاشية">
+    <div class="activity-icon" aria-hidden="true">🗣️</div>
+    <div class="activity-content">
+      <h3>٢. حلقات نقاشية</h3>
+      <p>
+        تجمع هذه الحلقات بين الخبراء والمخترعين والمبدعين لمناقشة التحديات التي يواجهها المبتكرون في اليمن وفي العالم بشكل عام، بالإضافة إلى استعراض الفرص المتاحة في مجال الابتكار. تهدف هذه الحلقات إلى تبادل الخبرات والمعرفة حول كيفية التغلب على العقبات وتوجيه المشاركين نحو استراتيجيات مبتكرة لمواكبة التطورات في هذا المجال.
+      </p>
+    </div>
+  </div>
+
+  <!-- النشاط 3 -->
+  <div class="activity" tabindex="0" aria-label="منصات تشبيك">
+    <div class="activity-icon" aria-hidden="true">🤝</div>
+    <div class="activity-content">
+      <h3>٣. منصات تشبيك</h3>
+      <p>
+        تعد هذه المنصات فرصة مثالية للمبدعين والمستثمرين للتواصل مباشرة وتبادل الأفكار، وبناء شراكات استراتيجية. تساهم هذه المنصات في تسهيل التفاعل بين المبدعين وأصحاب المشاريع، مما يساعد على توفير فرص التمويل والتوسع. إنها بمثابة حلقة وصل هامة لفتح أبواب التعاون بين القطاعين العام والخاص.
+      </p>
+    </div>
+  </div>
+
+  <!-- النشاط 4 -->
+  <div class="activity" tabindex="0" aria-label="جلسات تحفيزية">
+    <div class="activity-icon" aria-hidden="true">🔥</div>
+    <div class="activity-content">
+      <h3>٤. جلسات تحفيزية</h3>
+      <p>
+        تستهدف هذه الجلسات إلهام المشاركين وتعزيز روح الحافز والإبداع لديهم من خلال استماعهم إلى قصص نجاح يمنية ملهمة. يشارك فيها عدد من الأشخاص الذين حققوا نجاحًا ملحوظا في مجال الابتكار والمشاريع الصغيرة، مما يشجع المشاركين على مواصلة السعي وراء أفكارهم وطموحاتهم. كما تهدف الجلسات إلى تعزيز الثقة بالنفس وتحفيزهم على تجاوز التحديات لتحقيق النجاح الشخصي والمجتمعي.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+    <!-- Footer -->
+    <footer style=" background: linear-gradient(90deg, #2aa8a8 60%, #218181 100%);">
+
+        <div class="container text-center">
+            <div class="row">
+                <!-- أيقونات وسائل التواصل الاجتماعي -->
+                <div class="col-12 mb-3">
+                    <ul class="social-icon list-inline mb-0">
+                        <li class="list-inline-item mx-2">
+                            <a href="https://www.facebook.com/makespo2025" aria-label="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
+                        </li>
+                        <li class="list-inline-item mx-2">
+                            <a href="https://www.youtube.com/" aria-label="YouTube"><i class="fa fa-youtube-square fa-2x"></i></a>
+                        </li>
+                        <li class="list-inline-item mx-2">
+                            <a href="https://www.instagram.com/makespo2025" aria-label="Instagram"><i class="fa fa-instagram fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <!-- حقوق الحفظ -->
+                <div class="col-12">
+                    <p class="mb-0">
+                        حقوق النشر 2025 | جميع الحقوق محفوظة - تصميم
+                        <a href="index_ar.html">فريق مكسبو التقني</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+    
+    <!-- جافاسكريبت -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="assets/js/jquery-1.10.2.min.js"></script>
+    <script src="assets/js/jquery.backstretch.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Bootstrap JS Bundle (Popper.js مرفق) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  
+    <!-- روابط الجافاسكريبت -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+
+
+    
+
+ <script >
+    // الحصول على العنصر
+const scrollTopBtn = document.getElementById('scroll-top');
+
+// إضافة مستمع حدث على التمرير
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) { // عند التمرير أكثر من 100 بكسل من الأعلى
+    scrollTopBtn.classList.add('active'); // عرض الزر
+  } else {
+    scrollTopBtn.classList.remove('active'); // إخفاء الزر
+  }
+});
+
+// التعامل مع النقر على الزر للتمرير إلى الأعلى بسلاسة
+scrollTopBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+
+</body>
+
+</html>
