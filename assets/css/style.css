@@ -1,0 +1,589 @@
+
+body {
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+}
+
+strong { font-weight: 700; }
+
+a, a:hover, a:focus {
+	color: #FEFEFE;
+	text-decoration: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+h2 {
+	margin-top: 10px;
+	font-size: 42px;
+    font-weight: 100;
+    line-height: 54px;
+}
+
+img { max-width: 100%; }
+
+::-moz-selection { background: #2aa8a8; color: #fff; text-shadow: none; }
+::selection { background: #2aa8a8; color: #fff; text-shadow: none; }
+
+
+/* ======= تنسيقات القائمة التفاعلية (Navbar) ======= */
+
+/* ======= تنسيقات القائمة التفاعلية (Navbar) ======= */
+
+/* === تنسيقات Navbar لموقع مكسبو - RTL === */
+/* ======= تنسيقات القائمة التفاعلية (Navbar) للصفحة الإنجليزية (LTR) ======= */
+
+/* === تنسيقات Navbar لموقع مكسبو - LTR === */
+
+.navbar {
+    background-color: #2aa8a8 !important;
+    padding: 0.8rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    direction: ltr; /* تغيير الاتجاه إلى LTR */
+    display: flex;
+    justify-content: space-between; /* المسافات بين العناصر */
+    align-items: center;
+}
+
+/* حاوية شعار مكسبو + القائمة (جهة اليسار) */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* مسافة بين الشعار والقائمة */
+    order: 1;
+}
+
+/* حاوية أيقونة اللغة + تسجيل الدخول (جهة اليمين) */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    order: 3;
+}
+
+/* الشعار */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-right: 15px; /* من اليمين في LTR */
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    filter: brightness(0) invert(1); /* شفاف أو أبيض */
+}
+
+/* قائمة التنقل */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    direction: ltr;
+    gap: 15px;
+}
+
+.navbar-nav li {
+    list-style: none;
+}
+
+.navbar-nav .nav-link {
+    color: #e0f7f7 !important;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #144d4d !important;
+    text-decoration: none;
+}
+
+.navbar-nav .active > .nav-link {
+    color: #144d4d !important;
+    font-weight: 700;
+}
+
+/* القائمة المنسدلة */
+.dropdown-menu {
+    background-color: #2aa8a8 !important;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    min-width: 180px;
+    direction: ltr;
+    z-index: 2000;
+}
+
+/* القائمة المنسدلة - ضبط محاذاة النص */
+.dropdown-menu .dropdown-item {
+    color: #e0f7f7 !important;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    text-align: left; /* للنصوص الإنجليزية */
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background-color: #144d4d !important;
+    color: #ffffff !important;
+}
+
+/* زر القائمة في الأجهزة الصغيرة */
+.navbar-toggler {
+    border-color: #144d4d !important;
+    order: 2; /* يظهر بعد الشعار */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23144d4d' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* أيقونة الكرة الأرضية */
+.language-icon {
+    font-size: 24px;
+    color: #e0f7f7;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.language-icon:hover {
+    transform: scale(1.1);
+}
+
+/* زر تسجيل الدخول */
+.login-btn {
+    background: transparent;
+    border: 1px solid #e0f7f7;
+    color: #e0f7f7;
+    padding: 6px 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.login-btn:hover {
+    background-color: #144d4d;
+    border-color: #144d4d;
+    color: #fff;
+}
+
+/* استجابات */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-left,
+    .navbar-right {
+        gap: 10px;
+    }
+
+    .navbar-brand img {
+        max-height: 40px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+
+    .login-btn {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+}
+
+/* اجعل الشعار يظهر دائماً */
+.navbar-brand {
+  order: 1;
+}
+
+/* الزر الهامبرغر يظهر فقط في الشاشات الصغيرة */
+.navbar-toggler {
+  order: 2;
+  border-color: #144d4d !important;
+}
+
+/* عناصر القائمة (القائمة الافتراضية) */
+.navbar-collapse {
+  order: 3;
+}
+
+/* لون شعار وأيقونات*/
+.navbar {
+  background-color: #2aa8a8 !important;
+  direction: ltr;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand img {
+  max-height: 50px;
+  filter: brightness(0) invert(1);
+}
+
+/* تخصيص روابط القائمة */
+.nav-link {
+  color: #e0f7f7 !important;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: #144d4d !important;
+  text-decoration: none;
+}
+
+.login-btn {
+  border: 1px solid #e0f7f7;
+  border-radius: 4px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #144d4d;
+  color: #fff !important;
+  border-color: #144d4d;
+}
+
+/* ظهور الزر فقط في الشاشات الصغيرة */
+@media (max-width: 991.98px) {
+  /* اخفاء عناصر القائمة افتراضياً في الاجهزة الصغيرة */
+  .navbar-collapse {
+    display: none !important;
+    width: 100%;
+  }
+
+  /* إظهار القائمة عند استخدام الكلاس collapse show */
+  .navbar-collapse.collapse.show {
+    display: block !important;
+  }
+
+  /* تخطيط القائمة بالشكل العمودي */
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    background-color: #2aa8a8;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+}
+
+/* في الشاشات الكبيرة تظهر القائمة دائما */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    display: flex !important;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+}
+
+
+/***** Coming Soon *****/
+
+.coming-soon {
+    margin: 0 auto;
+}
+
+.inner-bg {
+    padding: 75px 0 40px 0;
+}
+
+.coming-soon .logo {
+	padding-bottom: 20px;
+
+}
+
+.coming-soon .logo h1 {
+	margin: 0;
+}
+.coming-soon .logo a {
+  display: inline-block;
+  max-height: 180px; /* حجم الشعار */
+  background-size: contain; /* لضبط حجم الخلفية داخل العنصر */
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+  
+.coming-soon p {
+	margin: 60px 0 10px 0;
+	padding: 0 120px;
+    
+	font-size: 20px;
+    line-height: 36px;
+}
+
+.timer {
+    margin-top: 60px;
+}
+
+.timer .days-wrapper,
+.timer .hours-wrapper,
+.timer .minutes-wrapper,
+.timer .seconds-wrapper {
+    display: inline-block;
+    width: 160px;
+    margin: 0 10px;
+    font-size: 18px;
+    /* border: 1px solid rgba(255, 255, 255, 0.41); */
+    padding: 25px 10px;
+    /* border-style: dashed; */
+    background-color: rgba(0, 0, 0, 0.17);
+    /* border-bottom-color: #F02020; */
+    border-bottom: solid #2aa8a8 2px;
+}
+
+.timer .days,
+.timer .hours,
+.timer .minutes,
+.timer .seconds {
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 90px;
+}
+
+.subscribe {
+	margin-top: 60px;
+}
+
+.subscribe form input {
+    width: 362px;
+    height: 52px;
+}
+
+.success-message, .error-message {
+	margin-top: 20px;
+	font-size: 18px;
+    line-height: 32px;
+}
+
+
+/***** Footer *****/
+
+footer {
+	margin-top: 60px;
+	padding: 20px 0 15px 0;
+	background: #3d3d3d;
+	background: rgba(222, 211, 211, 0.14);
+}
+
+.footer-copyright p {
+	margin: 0;
+	font-size: 14px;
+    line-height: 32px;
+    color: #fff;
+    text-align: left;
+}
+
+.footer-copyright a { color: #fff; border-bottom: 1px dotted #fff; }
+.footer-copyright a:hover { color: #fff; border: 0; }
+
+.footer-social {
+	text-align: right;
+}
+
+/* social icons */
+ul.social-icon{
+
+}
+ul.social-icon li{
+display:inline;
+list-style:none;
+}
+ul.social-icon li a i{
+font-size:24px;
+margin-left:10px;
+}
+
+
+
+input[type="text"] {
+    margin: 0;
+    padding: 0 10px;
+    vertical-align: middle;
+    background: none;
+    border: 1px solid rgba(227, 230, 238, 0.8);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 0;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+    margin-right: -4px;
+}
+
+input[type="text"]:focus {
+	outline: 0;
+    border: 1px solid #fff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+input[type="text"]:-moz-placeholder { color: #fff; }
+input[type="text"]:-ms-input-placeholder { color: #fff; }
+input[type="text"]::-webkit-input-placeholder { color: #fff; }
+
+
+.subscribe button {
+	height: 52px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    
+	background: #2aa8a8;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    
+	font-size: 19px;
+    font-weight: 300;
+    line-height: 52px;
+    color: #fff;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    
+	border-radius: 0;
+    text-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+.subscribe button:hover {
+    background: #2aa8a8;
+    color: #fff;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+.subscribe button:active {
+	outline: 0;
+    background: #555;
+    color: #fff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.subscribe button:focus {
+	outline: 0;
+	background: #555;
+	color: #fff;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+	outline: 0;
+	background: #555;
+	color: #fff;
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.coming-soon p { padding: 0; }
+	.timer .days-wrapper, .timer .hours-wrapper, .timer .minutes-wrapper, .timer .seconds-wrapper { width: 150px; }
+
+}
+
+@media (max-width: 767px) {
+	
+	.coming-soon p { padding: 0; }
+	.timer .days-wrapper, .timer .hours-wrapper, .timer .minutes-wrapper, .timer .seconds-wrapper { width: 150px; }
+	.timer .slash { display: none; }
+	
+	.footer-copyright p, .footer-social { text-align: center; }
+	.footer-copyright { padding-bottom: 15px; }
+
+}
+
+@media (max-width: 550px) {
+
+    .subscribe form input { width: 95%; }
+    .subscribe form button { width: 95%; margin-top: 10px; }
+
+}
+
+@media (max-width: 400px) {
+	
+	h1, h2 { font-size: 32px; }
+
+}
+
+
+
+.lang-link {
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: inherit;
+  text-decoration: none;
+}
+
+.lang-link:hover {
+  transform: scale(1.2);
+}
+
+
+

@@ -1,0 +1,816 @@
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Nunito",  sans-serif;
+  --nav-font: "Inter",  sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --default-color: #3d4348; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #3e5055; /* Color for headings, subheadings and title throughout the website */
+  --accent-color:  #2aa8a8; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+
+
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+
+/* PHP Email Form Messages
+------------------------------*/
+.php-email-form .error-message {
+  display: none;
+  background: #df1529;
+  color: #ffffff;
+  text-align: left;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .sent-message {
+  display: none;
+  color: #ffffff;
+  background: #059652;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+.php-email-form .loading {
+  display: none;
+  background: var(--surface-color);
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 24px;
+}
+
+.php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid var(--accent-color);
+  border-top-color: var(--surface-color);
+  animation: php-email-form-loading 1s linear infinite;
+}
+
+@keyframes php-email-form-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+/* ======== إعدادات عامة ======== */
+
+body {
+    background: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    direction: rtl; /* دعم اتجاه النص من اليمين إلى اليسار */
+}
+
+strong { font-weight: 700; }
+
+a, a:hover, a:focus {
+    color: #FEFEFE;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+h2 {
+    margin-top: 10px;
+    font-size: 42px;
+    font-weight: 100;
+    line-height: 54px;
+}
+
+img { max-width: 100%; }
+
+::-moz-selection { background: #2aa8a8; color: #fff; text-shadow: none; }
+::selection { background: #2aa8a8; color: #fff; text-shadow: none; }
+
+
+/* ======= تنسيقات القائمة التفاعلية (Navbar) ======= */
+
+/* === تنسيقات Navbar لموقع مكسبو - RTL === */
+
+.navbar {
+    background-color: #2aa8a8 !important;
+    padding: 0.8rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    direction: rtl; /* تأكد RTL */
+    display: flex;
+    justify-content: space-between; /* المسافات بين العناصر */
+    align-items: center;
+}
+
+/* حاوية شعار مكسبو + القائمة (جهة اليمين) */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* مسافة بين الشعار والقائمة */
+    order: 2;
+}
+
+/* حاوية أيقونة اللغة + تسجيل الدخول (جهة اليسار) */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    order: 1;
+}
+
+/* الشعار */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-left: 15px; /* من اليسار فـRTL */
+}
+
+.navbar-brand img {
+    max-height: 50px;
+    filter: brightness(0) invert(1); /* شفاف أو أبيض */
+}
+
+/* قائمة التنقل */
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    gap: 15px;
+}
+
+.navbar-nav li {
+    list-style: none;
+}
+
+.navbar-nav .nav-link {
+    color: #e0f7f7 !important;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #144d4d !important;
+    text-decoration: none;
+}
+
+.navbar-nav .active > .nav-link {
+    color: #144d4d !important;
+    font-weight: 700;
+}
+
+/* القائمة المنسدلة */
+.dropdown-menu {
+    background-color: #2aa8a8 !important;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    min-width: 180px;
+    direction: rtl;
+    z-index: 2000;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #e0f7f7 !important;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    background-color: #144d4d !important;
+    color: #ffffff !important;
+}
+
+/* زر القائمة في الأجهزة الصغيرة */
+.navbar-toggler {
+    border-color: #144d4d !important;
+    order: 3; /* يظهر بعد العناصر */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23144d4d' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* أيقونة الكرة الأرضية */
+.language-icon {
+    font-size: 24px;
+    color: #e0f7f7;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.language-icon:hover {
+    transform: scale(1.1);
+}
+
+/* زر تسجيل الدخول */
+.login-btn {
+    background: transparent;
+    border: 1px solid #e0f7f7;
+    color: #e0f7f7;
+    padding: 6px 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.login-btn:hover {
+    background-color: #144d4d;
+    border-color: #144d4d;
+    color: #fff;
+}
+
+/* استجابات */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .navbar-right,
+    .navbar-left {
+        gap: 10px;
+    }
+
+    .navbar-brand img {
+        max-height: 40px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+    }
+
+    .login-btn {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+}
+
+
+
+/* اجعل الشعار يظهر دائماً */
+.navbar-brand {
+  order: 1;
+}
+
+/* زر الهامبرغر يظهر فقط في الشاشات الصغيرة */
+.navbar-toggler {
+  order: 2;
+  border-color: #144d4d !important;
+}
+
+/* عناصر القائمة (القائمة الافتراضية) */
+.navbar-collapse {
+  order: 3;
+}
+
+/* لون شعار وأيقونات*/
+.navbar {
+  background-color: #2aa8a8 !important;
+  direction: rtl;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand img {
+  max-height: 50px;
+  filter: brightness(0) invert(1);
+}
+
+/* تخصيص روابط القائمة */
+.nav-link {
+  color: #e0f7f7 !important;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: #144d4d !important;
+  text-decoration: none;
+}
+
+.login-btn {
+  border: 1px solid #e0f7f7;
+  border-radius: 4px;
+  padding: 4px 12px;
+  white-space: nowrap;
+  transition: all 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #144d4d;
+  color: #fff !important;
+  border-color: #144d4d;
+}
+
+/* ظهور الزر فقط في الشاشات الصغيرة */
+@media (max-width: 991.98px) {
+  /* اخفاء عناصر القائمة افتراضياً في الاجهزة الصغيرة */
+  .navbar-collapse {
+    display: none !important;
+    width: 100%;
+  }
+
+  /* إظهار القائمة عند استخدام الكلاس collapse show */
+  .navbar-collapse.collapse.show {
+    display: block !important;
+  }
+
+  /* تخطيط القائمة بالشكل العمودي */
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    background-color: #2aa8a8;
+    padding: 10px 15px;
+    border-radius: 6px;
+  }
+
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+}
+
+/* في الشاشات الكبيرة تظهر القائمة دائما */
+@media (min-width: 992px) {
+  .navbar-collapse {
+    display: flex !important;
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 15px;
+    margin-bottom: 0;
+  }
+}
+
+
+
+/***** Coming Soon *****/
+
+.coming-soon {
+    margin: 0 auto;
+    direction: rtl;
+}
+
+.inner-bg {
+    padding: 75px 0 40px 0;
+}
+
+.coming-soon .logo {
+    padding-bottom: 20px;
+}
+
+.coming-soon .logo h1 {
+    margin: 0;
+}
+
+.coming-soon .logo a {
+    display: inline-block;
+    max-height: 180px; /* حجم الشعار */
+    background-size: contain; /* لضبط حجم الخلفية داخل العنصر */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.coming-soon p {
+    margin: 60px 0 10px 0;
+    padding: 0 120px;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+}
+
+.timer {
+    margin-top: 60px;
+}
+
+.timer .days-wrapper,
+.timer .hours-wrapper,
+.timer .minutes-wrapper,
+.timer .seconds-wrapper {
+    display: inline-block;
+    width: 160px;
+    margin: 0 10px;
+    font-size: 18px;
+    /* border: 1px solid rgba(255, 255, 255, 0.41); */
+    padding: 25px 10px;
+    /* border-style: dashed; */
+    background-color: rgba(0, 0, 0, 0.17);
+    /* border-bottom-color: #F02020; */
+    border-bottom: solid #2aa8a8 2px;
+}
+
+.timer .days,
+.timer .hours,
+.timer .minutes,
+.timer .seconds {
+    font-size: 80px;
+    font-weight: 100;
+    line-height: 90px;
+}
+
+.subscribe {
+    margin-top: 60px;
+}
+
+.subscribe form input {
+    width: 362px;
+    height: 52px;
+}
+
+.success-message, .error-message {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+/***** Footer *****/
+
+footer {
+    margin-top: 60px;
+    padding: 20px 0 15px 0;
+    background: rgba(222, 211, 211, 0.14);
+    color: #fff;
+    direction: rtl;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 32px;
+    color: #fff;
+    text-align: right;
+}
+
+.footer-copyright a {
+    color: #fff;
+    border-bottom: 1px dotted #fff;
+}
+
+.footer-copyright a:hover {
+    color: #fff;
+    border: 0;
+}
+
+.footer-social {
+    text-align: left; /* عكس المحاذاة بسبب RTL */
+}
+
+/* social icons */
+ul.social-icon {
+    padding: 0;
+    margin: 0;
+}
+
+ul.social-icon li {
+    display: inline;
+    list-style: none;
+}
+
+ul.social-icon li a i {
+    font-size: 24px;
+    margin-right: 10px; /* بدل margin-left */
+}
+
+/* تنسيقات الحقول */
+
+input[type="text"] {
+    margin: 0;
+    padding: 0 10px;
+    vertical-align: middle;
+    background: none;
+    border: 1px solid rgba(227, 230, 238, 0.8);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 0;
+    box-shadow: none;
+    transition: all .3s;
+    margin-left: -4px; /* بدل margin-right */
+}
+
+input[type="text"]:focus {
+    outline: 0;
+    border: 1px solid #fff;
+    box-shadow: none;
+}
+
+input[type="text"]:-moz-placeholder { color: #fff; }
+input[type="text"]:-ms-input-placeholder { color: #fff; }
+input[type="text"]::-webkit-input-placeholder { color: #fff; }
+
+.subscribe button {
+    height: 52px;
+    margin: 0;
+    padding: 0 20px;
+    vertical-align: middle;
+    background: #2aa8a8;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    font-weight: 300;
+    line-height: 52px;
+    color: #fff;
+    border-radius: 0;
+    text-shadow: none;
+    box-shadow: none;
+    transition: all .3s;
+}
+
+.subscribe button:hover {
+    background: #2aa8a8;
+    color: #fff;
+}
+
+.subscribe button:active,
+.subscribe button:focus,
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus {
+    outline: 0;
+    background: #555;
+    color: #fff;
+}
+
+/* استجابات الشاشة */
+
+/* شاشات كبيرة */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* يمكن إضافة تعديلات خاصة */
+}
+
+/* شاشات متوسطة */
+@media (min-width: 768px) and (max-width: 991px) {
+    .coming-soon p { padding: 0; }
+    .timer .days-wrapper, .timer .hours-wrapper, .timer .minutes-wrapper, .timer .seconds-wrapper { width: 150px; }
+}
+
+/* شاشات صغيرة */
+@media (max-width: 767px) {
+    .coming-soon p { padding: 0; }
+    .timer .days-wrapper, .timer .hours-wrapper, .timer .minutes-wrapper, .timer .seconds-wrapper { width: 150px; }
+    .timer .slash { display: none; }
+    .footer-copyright p, .footer-social { text-align: center; }
+    .footer-copyright { padding-bottom: 15px; }
+}
+
+/* شاشات صغيرة جداً */
+@media (max-width: 550px) {
+    .subscribe form input { width: 95%; }
+    .subscribe form button { width: 95%; margin-top: 10px; }
+}
+
+/* شاشات صغيرة جداً جداً */
+@media (max-width: 400px) {
+    h1, h2 { font-size: 32px; }
+}
+
+/* محاذاة الشعار إلى اليمين في RTL */
+html[dir="rtl"] .navbar-brand {
+  order: 2; /* يجعل الشعار في النهاية (يمين) */
+  margin-left: 15px;
+  margin-right: 0;
+}
+
+/* محاذاة الشعار إلى اليسار في LTR */
+html[dir="ltr"] .navbar-brand {
+  order: 1; /* الشعار في البداية (يسار) */
+  margin-right: 15px;
+  margin-left: 0;
+}
+
+/* ترتيب روابط اللغة */
+.language-switcher {
+  gap: 10px;
+}
+
+.lang-link {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.lang-link:hover {
+  transform: scale(1.1);
+}
+
+.lang-flag {
+  width: 28px;
+  height: 20px;
+  border-radius: 3px;
+  display: block;
+}
+
+/* ترتيب روابط اللغة حسب اتجاه الصفحة */
+html[dir="rtl"] .language-switcher {
+  order: 1; /* تظهر على اليسار */
+}
+
+html[dir="ltr"] .language-switcher {
+  order: 2; /* تظهر على اليمين */
+}
+
+
+.lang-link {
+  margin: 0 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: inherit;
+  text-decoration: none;
+}
+
+.lang-link:hover {
+  transform: scale(1.2);
+}
+
+
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info-item {
+  background-color: var(--surface-color);
+  padding: 20px 0 30px 0;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact .info-item i {
+  font-size: 20px;
+  color: var(--accent-color);
+  width: 56px;
+  height: 56px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  border: 2px dotted color-mix(in srgb, var(--accent-color), transparent 40%);
+}
+
+.contact .info-item h3 {
+  font-size: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.contact .php-email-form {
+  background-color: var(--surface-color);
+  height: 100%;
+  padding: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 575px) {
+  .contact .php-email-form {
+    padding: 20px;
+  }
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 0;
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form button[type=submit] {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+
+
+
+
+/*--------------------------------------------------------------
+# Scroll Top Button
+--------------------------------------------------------------*/
+
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+
+
+
+.scroll-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  background-color: #2aa8a8;
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.scroll-top i {
+  font-size: 24px;
+    color:#ffffff;
+  line-height: 0;
+}
+
+.scroll-top:hover {
+  background-color: color-mix(in srgb,#2aa8a8, transparent 20%);
+  color:   #ffffff;
+}
+
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  bottom: 15px;
+}
+
+
